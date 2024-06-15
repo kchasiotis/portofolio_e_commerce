@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../widgets/custom_text_field.dart';
+import '../../widgets/primary_button.dart';
+
 const textStyle = const TextStyle(fontSize: 14, fontWeight: FontWeight.w200);
 
 class SignUp extends StatelessWidget {
@@ -51,19 +54,9 @@ class SignUp extends StatelessWidget {
           Row(
             children: [
               Expanded(
-                  child: ElevatedButton(
+                  child: PrimaryButton(
+                text: 'SIGN UP',
                 onPressed: null,
-                style: ButtonStyle(
-                    backgroundColor:
-                        WidgetStateProperty.all<Color>(const Color(0xFFEF3651)),
-                    minimumSize:
-                        WidgetStateProperty.all<Size>(const Size(88, 48)),
-                    foregroundColor:
-                        WidgetStateProperty.all<Color>(Colors.white),
-                    textStyle: WidgetStateProperty.all<TextStyle>(
-                        const TextStyle(
-                            fontSize: 14, fontWeight: FontWeight.w300))),
-                child: const Text('SIGN UP'),
               ))
             ],
           ),
@@ -105,55 +98,6 @@ class SignUp extends StatelessWidget {
   }
 }
 
-// create widget
-class CustomTextField extends StatelessWidget {
-  const CustomTextField({
-    Key? key,
-    required this.hintText,
-    required this.icon,
-  }) : super(key: key);
-
-  final String hintText;
-  final String? icon;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.only(top: 14, bottom: 15, left: 22),
-      decoration: BoxDecoration(
-        color: const Color(0xFF2A2C36),
-        borderRadius: BorderRadius.circular(4),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Expanded(
-              child: Container(
-                  height: 35,
-                  alignment: Alignment.centerLeft,
-                  child: TextField(
-                    style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w300),
-                    decoration: InputDecoration.collapsed(
-                        hintText: hintText,
-                        fillColor: Colors.white,
-                        hintStyle: const TextStyle(
-                            color: Color(0xffABB4BD),
-                            fontSize: 14,
-                            fontWeight: FontWeight.w300)),
-                  ))),
-          icon != null ? Image.asset(icon!) : Container(),
-          const SizedBox(
-            width: 21,
-          )
-        ],
-      ),
-    );
-  }
-}
-
 class SocialMediaButton extends StatelessWidget {
   const SocialMediaButton({
     Key? key,
@@ -179,8 +123,8 @@ class SocialMediaButton extends StatelessWidget {
               foregroundColor: WidgetStateProperty.all<Color>(Colors.white),
               padding: WidgetStateProperty.all<EdgeInsetsGeometry>(
                   const EdgeInsets.only(top: 20, bottom: 20)),
-              textStyle: WidgetStateProperty.all<TextStyle>(const TextStyle(
-                  fontSize: 14, fontWeight: FontWeight.w300))),
+              textStyle: WidgetStateProperty.all<TextStyle>(
+                  const TextStyle(fontSize: 14, fontWeight: FontWeight.w300))),
           child: Image.asset(
             icon,
             width: 24,
@@ -189,3 +133,4 @@ class SocialMediaButton extends StatelessWidget {
         ));
   }
 }
+
