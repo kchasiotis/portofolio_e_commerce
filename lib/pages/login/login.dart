@@ -1,4 +1,3 @@
-// create stateless widget
 import 'package:flutter/material.dart';
 
 import '../../widgets/custom_text_field.dart';
@@ -12,17 +11,17 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: ScreenHeader(title: 'Login'),
+        appBar: const ScreenHeader(title: 'Login'),
         body: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Column(children: <Widget>[
-              SizedBox(height: 73),
-              CustomTextField(
+              const SizedBox(height: 73),
+              const CustomTextField(
                   hintText: 'Email',
                   icon: 'assets/icons/outline-check-24px.png'),
-              SizedBox(height: 8),
-              CustomTextField(hintText: 'Password', icon: null),
-              SizedBox(height: 16),
+              const SizedBox(height: 8),
+              const CustomTextField(hintText: 'Password', icon: null),
+              const SizedBox(height: 16),
               Row(mainAxisAlignment: MainAxisAlignment.end, children: [
                 TextButton(
                     onPressed: null,
@@ -37,8 +36,8 @@ class Login extends StatelessWidget {
                                 fontSize: 14, fontWeight: FontWeight.w300)))),
                 Image.asset('assets/icons/right-arrow.png'),
               ]),
-              SizedBox(height: 28),
-              Row(
+              const SizedBox(height: 28),
+              const Row(
                 children: [
                   Expanded(
                       child: PrimaryButton(
