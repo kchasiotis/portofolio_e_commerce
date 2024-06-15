@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portofolio_e_commerce/pages/login/login.dart';
 import 'package:portofolio_e_commerce/pages/sign_up/sign_up.dart';
 
 void main() {
@@ -33,7 +34,9 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         scaffoldBackgroundColor: const Color(0xFF1E1F28),
       ),
-      home: const SignUp(),
+      // home: const SignUp(),
+      home: const Login(),
+
     );
   }
 }

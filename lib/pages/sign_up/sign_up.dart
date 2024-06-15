@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../widgets/custom_text_field.dart';
 import '../../widgets/primary_button.dart';
+import '../../widgets/social_media_buttons.dart';
 
 const textStyle = const TextStyle(fontSize: 14, fontWeight: FontWeight.w200);
 
@@ -11,12 +12,7 @@ class SignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sign Up',
-            style: TextStyle(fontSize: 34, fontWeight: FontWeight.bold)),
-        backgroundColor: const Color(0xFF1E1F28),
-        foregroundColor: Colors.white,
-      ),
+      appBar: ScreenHeader(title: 'Sign Up'),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Column(children: <Widget>[
@@ -61,36 +57,8 @@ class SignUp extends StatelessWidget {
             ],
           ),
           const Expanded(
-              child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Text(
-                'Or sign up with social account',
-                style: TextStyle(color: Colors.white, fontSize: 14),
-              ),
-              SizedBox(
-                height: 12,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SocialMediaButton(
-                    icon: 'assets/icons/google.png',
-                    onPressed: null,
-                  ),
-                  SizedBox(
-                    width: 16,
-                  ),
-                  SocialMediaButton(
-                    icon: 'assets/icons/facebook.png',
-                    onPressed: null,
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 22,
-              )
-            ],
+              child: SocialMediaButtons(
+            text: 'Or sign up with social account',
           ))
         ]),
       ),
@@ -98,39 +66,21 @@ class SignUp extends StatelessWidget {
   }
 }
 
-class SocialMediaButton extends StatelessWidget {
-  const SocialMediaButton({
-    Key? key,
-    required this.icon,
-    required this.onPressed,
-  }) : super(key: key);
+class ScreenHeader extends StatelessWidget implements PreferredSizeWidget {
+  const ScreenHeader({Key? key, required this.title}) : super(key: key);
 
-  final String icon;
-  final VoidCallback? onPressed;
+  final String title;
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-        width: 98,
-        height: 64,
-        child: TextButton(
-          onPressed: onPressed,
-          style: ButtonStyle(
-              shape: WidgetStateProperty.all<OutlinedBorder>(
-                  RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(18))),
-              backgroundColor: WidgetStateProperty.all<Color>(Colors.white),
-              foregroundColor: WidgetStateProperty.all<Color>(Colors.white),
-              padding: WidgetStateProperty.all<EdgeInsetsGeometry>(
-                  const EdgeInsets.only(top: 20, bottom: 20)),
-              textStyle: WidgetStateProperty.all<TextStyle>(
-                  const TextStyle(fontSize: 14, fontWeight: FontWeight.w300))),
-          child: Image.asset(
-            icon,
-            width: 24,
-            height: 24,
-          ),
-        ));
+    return AppBar(
+      title: Text(title,
+          style: TextStyle(fontSize: 34, fontWeight: FontWeight.bold)),
+      backgroundColor: const Color(0xFF1E1F28),
+      foregroundColor: Colors.white,
+    );
   }
-}
 
+  @override
+  Size get preferredSize => Size.fromHeight(AppBar().preferredSize.height);
+}
