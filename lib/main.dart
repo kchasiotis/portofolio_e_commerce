@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portofolio_e_commerce/pages/sign_up.dart';
+import 'package:portofolio_e_commerce/pages/sign_up/sign_up.dart';
 
 void main() {
   runApp(const MyApp());
