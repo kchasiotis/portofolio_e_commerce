@@ -5,10 +5,12 @@ class CustomTextField extends StatelessWidget {
     Key? key,
     required this.hintText,
     required this.icon,
+    this.showError
   }) : super(key: key);
 
   final String hintText;
   final String? icon;
+  final bool? showError;
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +19,9 @@ class CustomTextField extends StatelessWidget {
       decoration: BoxDecoration(
         color: const Color(0xFF2A2C36),
         borderRadius: BorderRadius.circular(4),
+        border: showError == true
+              ? Border.all(color: const Color(0xFFFF2424))
+            : null
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,

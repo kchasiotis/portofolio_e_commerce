@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portofolio_e_commerce/pages/forgot_password/forgot_password.dart';
 import 'package:portofolio_e_commerce/pages/login/login.dart';
 import 'package:portofolio_e_commerce/pages/sign_up/sign_up.dart';
 
@@ -35,9 +36,8 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: const Color(0xFF1E1F28),
       ),
       // home: const SignUp(),
-      home: const Login(),
-
+      // home: const Login(),
+      home: ForgotPassword(),
     );
   }
 }
-
