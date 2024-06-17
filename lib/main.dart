@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:portofolio_e_commerce/pages/forgot_password/forgot_password.dart';
 import 'package:portofolio_e_commerce/pages/login/login.dart';
 import 'package:portofolio_e_commerce/pages/sign_up/sign_up.dart';
+import 'package:portofolio_e_commerce/pages/visual_search/visual_search.dart';
+
+import 'pages/home_screen/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -37,7 +40,14 @@ class MyApp extends StatelessWidget {
       ),
       // home: const SignUp(),
       // home: const Login(),
-      home: ForgotPassword(),
+      // home: ForgotPassword(),
+      routes: {
+        '/': (context) => const HomeScreen(),
+        '/sign_up': (context) => const SignUp(),
+        '/login': (context) => const Login(),
+        '/forgot_password': (context) => ForgotPassword(),
+        '/visual_search': (context) => const VisualSearch(),
+      },
     );
   }
 }
