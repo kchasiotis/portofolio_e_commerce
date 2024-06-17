@@ -44,13 +44,15 @@ class SearchByPhoto extends StatelessWidget {
                     Material(
                       color: Colors.transparent,
                       child: Ink(
+                        height: 52,
+                        width: 52,
                         decoration: const ShapeDecoration(
                           color: Color(0xffEF3651),
                           shape: CircleBorder(),
                         ),
                         child: IconButton(
-                          iconSize: 24,
-                          icon: const Icon(Icons.android),
+                          iconSize: 26,
+                          icon: const Icon(Icons.photo_camera),
                           color: Colors.white,
                           onPressed: () {},
                         ),
