@@ -13,7 +13,7 @@ class SearchByPhoto extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Container(
+/*          Container(
             width: double.infinity,
             height: double.infinity,
             decoration: const BoxDecoration(
@@ -23,31 +23,42 @@ class SearchByPhoto extends StatelessWidget {
                 alignment: Alignment.topCenter,
               ),
             ),
-          ),
+          ),*/
           Container(
             decoration: const BoxDecoration(
+              // color: Colors.white,
               color: Color(0xff1E1F28),
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 IconButton(
-                    onPressed: null,
+                    onPressed: () {},
                     iconSize: 24,
+                    color: Colors.white,
                     icon: const Icon(Icons.flash_on)),
                 SizedBox(width: 47),
-                Ink(
+                Material(
+                  color: Colors.transparent,
+                  child: Ink(
                     decoration: const ShapeDecoration(
                       color: Color(0xffEF3651),
                       shape: CircleBorder(),
                     ),
                     child: IconButton(
-                        onPressed: null,
-                        iconSize: 24,
-                        icon: const Icon(Icons.camera_alt))),
+                      iconSize: 24,
+                      icon: Icon(Icons.android),
+                      color: Colors.white,
+                      onPressed: () {},
+                    ),
+                  ),
+                ),
                 SizedBox(width: 47),
                 IconButton(
-                    onPressed: null, iconSize: 24, icon: const Icon(Icons.sync))
+                    onPressed: () {},
+                    iconSize: 24,
+                    color: Colors.white,
+                    icon: const Icon(Icons.sync))
               ],
             ),
           )
