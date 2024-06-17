@@ -5,6 +5,7 @@ import 'package:portofolio_e_commerce/pages/sign_up/sign_up.dart';
 import 'package:portofolio_e_commerce/pages/visual_search/visual_search.dart';
 
 import 'pages/home_screen/home_screen.dart';
+import 'pages/search_by_photo/search_by_photo.dart';
 
 void main() {
   runApp(const MyApp());
@@ -47,6 +48,7 @@ class MyApp extends StatelessWidget {
         '/login': (context) => const Login(),
         '/forgot_password': (context) => ForgotPassword(),
         '/visual_search': (context) => const VisualSearch(),
+        '/search_by_photo': (context) => const SearchByPhoto()
       },
     );
   }

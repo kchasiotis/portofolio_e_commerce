@@ -71,6 +71,16 @@ class HomeScreen extends StatelessWidget {
                 },
               ),
             ),
+            const SizedBox(height: 16),
+            Container(
+              width: double.infinity,
+              child: PrimaryButton(
+                text: 'Search by Photo',
+                onPressed: () {
+                  Navigator.pushNamed(context, '/search_by_photo');
+                },
+              ),
+            ),
           ],
         ),
       ),
