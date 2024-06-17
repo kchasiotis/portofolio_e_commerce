@@ -26,7 +26,6 @@ class SearchByPhoto extends StatelessWidget {
           ),
           Container(
             decoration: const BoxDecoration(
-              // color: Colors.white,
               color: Color(0xff1E1F28),
             ),
             child: Column(
