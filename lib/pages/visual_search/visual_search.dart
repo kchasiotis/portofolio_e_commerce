@@ -28,7 +28,7 @@ class VisualSearch extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: Column(
-mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
                   'Search for an outfit by taking a photo or uploading an image',
