@@ -27,7 +27,6 @@ class Home extends StatelessWidget {
                       alignment: Alignment.topCenter,
                     ),
                     color: Colors.blue,
-                    borderRadius: BorderRadius.circular(10),
                   ),
                 ),
                 Positioned(
@@ -58,7 +57,7 @@ class Home extends StatelessWidget {
                   ),
                 )
               ])),
-          Expanded(
+          const Expanded(
             flex: 3,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -73,7 +72,7 @@ class Home extends StatelessWidget {
                       Text('View all',
                           style: TextStyle(
                               color: Color(0xffF6F6F6),
-                              fontSize: 11,
+                              fontSize: 12,
                               fontWeight: FontWeight.w300))
                     ],
                   ),
@@ -82,7 +81,7 @@ class Home extends StatelessWidget {
                   padding: EdgeInsets.only(left: 16),
                   child: Text(
                     'You\'ve never seen it before!',
-                    style: TextStyle(color: Color(0xffABB4BD)),
+                    style: TextStyle(color: Color(0xffABB4BD), fontSize: 11),
                   ),
                 ),
               ],
