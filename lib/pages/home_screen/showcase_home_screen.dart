@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import '../../widgets/primary_button.dart';
 import '../../widgets/screen_header.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class ShowCaseHomeScreen extends StatelessWidget {
+  const ShowCaseHomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -78,6 +78,16 @@ class HomeScreen extends StatelessWidget {
                 text: 'Search by Photo',
                 onPressed: () {
                   Navigator.pushNamed(context, '/search_by_photo');
+                },
+              ),
+            ),
+            const SizedBox(height: 16),
+            Container(
+              width: double.infinity,
+              child: PrimaryButton(
+                text: 'Home',
+                onPressed: () {
+                  Navigator.pushNamed(context, '/home');
                 },
               ),
             ),

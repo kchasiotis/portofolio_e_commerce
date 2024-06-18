@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:portofolio_e_commerce/pages/forgot_password/forgot_password.dart';
+import 'package:portofolio_e_commerce/pages/home_screen/home.dart';
 import 'package:portofolio_e_commerce/pages/login/login.dart';
 import 'package:portofolio_e_commerce/pages/sign_up/sign_up.dart';
 import 'package:portofolio_e_commerce/pages/visual_search/visual_search.dart';
 
-import 'pages/home_screen/home_screen.dart';
+import 'pages/home_screen/showcase_home_screen.dart';
 import 'pages/search_by_photo/search_by_photo.dart';
 
 void main() {
@@ -43,12 +44,13 @@ class MyApp extends StatelessWidget {
       // home: const Login(),
       // home: ForgotPassword(),
       routes: {
-        '/': (context) => const HomeScreen(),
+        '/': (context) => const ShowCaseHomeScreen(),
         '/sign_up': (context) => const SignUp(),
         '/login': (context) => const Login(),
         '/forgot_password': (context) => ForgotPassword(),
         '/visual_search': (context) => const VisualSearch(),
-        '/search_by_photo': (context) => const SearchByPhoto()
+        '/search_by_photo': (context) => const SearchByPhoto(),
+        '/home': (context) => const Home(),
       },
     );
   }
