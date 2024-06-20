@@ -1,10 +1,8 @@
-// create stateless widget
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:portofolio_e_commerce/pages/product_card/product_card.dart';
 
 import '../../widgets/headers.dart';
-import '../../widgets/primary_button.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -59,46 +57,44 @@ class Home extends StatelessWidget {
                   ),
                 )
               ])),
-          Container(
-            child: const Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(height: 33),
-                Padding(
-                  padding: EdgeInsets.only(left: 14, right: 14),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      PrimaryHeader(title: 'New'),
-                      Text('View all',
-                          style: TextStyle(
-                              color: Color(0xffF6F6F6),
-                              fontSize: 12,
-                              fontWeight: FontWeight.w300))
-                    ],
-                  ),
+          const Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: 33),
+              Padding(
+                padding: EdgeInsets.only(left: 14, right: 14),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    PrimaryHeader(title: 'New'),
+                    Text('View all',
+                        style: TextStyle(
+                            color: Color(0xffF6F6F6),
+                            fontSize: 11,
+                            fontWeight: FontWeight.w300))
+                  ],
                 ),
-                Padding(
-                  padding: EdgeInsets.only(left: 16),
-                  child: Text(
-                    'You\'ve never seen it before!',
-                    style: TextStyle(color: Color(0xffABB4BD), fontSize: 11),
-                  ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 16),
+                child: Text(
+                  'You\'ve never seen it before!',
+                  style: TextStyle(color: Color(0xffABB4BD)),
                 ),
-                Padding(
-                  padding: EdgeInsets.only(left: 16),
-                  child: SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        children: [
-                          ProductCard(image: 'product1.png', topLabel: 'NEW', labelColor: Colors.black),
-                          SizedBox(width: 16),
-                        ],
-                      )),
-                ),
-                SizedBox(height: 16),
-              ],
-            ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 16),
+                child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        ProductCard(image: 'product1.png', topLabel: 'NEW', labelColor: Colors.black),
+                        SizedBox(width: 16),
+                      ],
+                    )),
+              ),
+              SizedBox(height: 16),
+            ],
           )
         ],
       )),
