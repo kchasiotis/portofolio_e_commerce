@@ -83,7 +83,7 @@ class Home extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 16),
+                padding: EdgeInsets.only(left: 16, top: 22),
                 child: SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
