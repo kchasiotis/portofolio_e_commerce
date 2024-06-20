@@ -60,7 +60,7 @@ class Home extends StatelessWidget {
                 )
               ])),
           Container(
-            child: Column(
+            child: const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(height: 33),
@@ -87,7 +87,14 @@ class Home extends StatelessWidget {
                 ),
                 Padding(
                   padding: EdgeInsets.only(left: 16),
-                  child: ProductCard(image: 'product1.png'),
+                  child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: [
+                          ProductCard(image: 'product1.png', topLabel: 'NEW', labelColor: Colors.black),
+                          SizedBox(width: 16),
+                        ],
+                      )),
                 ),
                 SizedBox(height: 16),
               ],
