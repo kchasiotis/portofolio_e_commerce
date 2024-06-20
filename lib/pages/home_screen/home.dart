@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:portofolio_e_commerce/pages/product_card/product_card.dart';
 
@@ -21,7 +20,7 @@ class Home extends StatelessWidget {
               height: 536, // todo: size dynamically
               child: Stack(children: [
                 Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage('assets/images/big_banner.png'),
                       fit: BoxFit.cover,
@@ -33,12 +32,12 @@ class Home extends StatelessWidget {
                 Positioned(
                   bottom: 32,
                   child: Padding(
-                    padding: EdgeInsets.only(left: 15),
+                    padding: const EdgeInsets.only(left: 15),
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          LargeHeader(title: 'Fashion\nsale'),
-                          SizedBox(height: 18),
+                          const LargeHeader(title: 'Fashion\nsale'),
+                          const SizedBox(height: 18),
                           ElevatedButton(
                             onPressed: null,
                             style: ButtonStyle(
@@ -61,8 +60,8 @@ class Home extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 33),
-              Padding(
+              const SizedBox(height: 33),
+              const Padding(
                 padding: EdgeInsets.only(left: 14, right: 14),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -76,7 +75,7 @@ class Home extends StatelessWidget {
                   ],
                 ),
               ),
-              Padding(
+              const Padding(
                 padding: EdgeInsets.only(left: 16),
                 child: Text(
                   'You\'ve never seen it before!',
@@ -84,7 +83,7 @@ class Home extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 16, top: 22),
+                padding: const EdgeInsets.only(left: 16, top: 22),
                 child: SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
@@ -100,7 +99,7 @@ class Home extends StatelessWidget {
                               discountPrice: 12,
                               reviewsNumber: 0),
                         ),
-                        SizedBox(width: 16),
+                        const SizedBox(width: 16),
                         ProductCard(
                           labelColor: Colors.black,
                           product: new Product(
@@ -111,9 +110,9 @@ class Home extends StatelessWidget {
                               price: 10,
                               reviewsNumber: 0),
                         ),
-                        SizedBox(width: 16),
+                        const SizedBox(width: 16),
                         ProductCard(
-                          labelColor: Color(0xffFF3365),
+                          labelColor: const Color(0xffFF3365),
                           product: new Product(
                               image: 'product3.png',
                               label: '-30%',
@@ -123,11 +122,11 @@ class Home extends StatelessWidget {
                               discountPrice: 39,
                               reviewsNumber: 0),
                         ),
-                        SizedBox(width: 16),
+                        const SizedBox(width: 16),
                       ],
                     )),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
             ],
           )
         ],
