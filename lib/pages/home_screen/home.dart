@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:portofolio_e_commerce/pages/product_card/product_card.dart';
 
+import '../../models/Product.dart';
 import '../../widgets/headers.dart';
 
 class Home extends StatelessWidget {
@@ -51,13 +52,13 @@ class Home extends StatelessWidget {
                                     const TextStyle(
                                         fontSize: 14,
                                         fontWeight: FontWeight.w300))),
-                            child: Text('Check'),
+                            child: const Text('Check'),
                           )
                         ]),
                   ),
                 )
               ])),
-          const Column(
+          Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 33),
@@ -88,7 +89,40 @@ class Home extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       children: [
-                        ProductCard(image: 'product1.png', topLabel: 'NEW', labelColor: Colors.black),
+                        ProductCard(
+                          labelColor: Colors.black,
+                          product: new Product(
+                              image: 'product1.png',
+                              label: 'NEW',
+                              brandName: 'Dorothy Perking',
+                              description: 'Evening Dress',
+                              price: 15,
+                              discountPrice: 12,
+                              reviewsNumber: 0),
+                        ),
+                        SizedBox(width: 16),
+                        ProductCard(
+                          labelColor: Colors.black,
+                          product: new Product(
+                              image: 'product2.png',
+                              label: 'NEW',
+                              brandName: 'Mango Boy',
+                              description: 'T-Shirt Sailing',
+                              price: 10,
+                              reviewsNumber: 0),
+                        ),
+                        SizedBox(width: 16),
+                        ProductCard(
+                          labelColor: Color(0xffFF3365),
+                          product: new Product(
+                              image: 'product3.png',
+                              label: '-30%',
+                              brandName: '&Berries',
+                              description: 'T-Shirt',
+                              price: 55,
+                              discountPrice: 39,
+                              reviewsNumber: 0),
+                        ),
                         SizedBox(width: 16),
                       ],
                     )),
