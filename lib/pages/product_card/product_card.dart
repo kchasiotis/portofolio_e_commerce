@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 
 class ProductCard extends StatelessWidget {
-  const ProductCard({Key? key, required this.image}) : super(key: key);
+  const ProductCard(
+      {super.key,
+      required this.image,
+      required this.topLabel,
+      required this.labelColor});
+
   final String image;
+  final String topLabel;
+  final Color labelColor;
 
   @override
   Widget build(build) {
@@ -24,15 +31,16 @@ class ProductCard extends StatelessWidget {
                 child: Container(
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
-                      color: Colors.red,
+                      color: labelColor,
                       borderRadius: BorderRadius.circular(16)),
                   width: 40,
                   height: 24,
-                  child: Text('-20%',
-                      style: TextStyle(color: Colors.white, fontSize: 11)),
+                  child: Text(topLabel,
+                      style:
+                          const TextStyle(color: Colors.white, fontSize: 11)),
                 )))
       ]),
-      Column(),
+      const Column(),
       Positioned(
           right: 0,
           top: 164,
@@ -42,7 +50,7 @@ class ProductCard extends StatelessWidget {
                 color: Colors.black, shape: CircleBorder()),
             child: IconButton(
               onPressed: () {},
-              icon: Icon(Icons.favorite_border, color: Colors.white),
+              icon: const Icon(Icons.favorite_border, color: Colors.white),
               iconSize: 24,
             ),
           ))),
