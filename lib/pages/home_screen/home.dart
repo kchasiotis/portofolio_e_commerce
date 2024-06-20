@@ -1,6 +1,7 @@
 // create stateless widget
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:portofolio_e_commerce/pages/product_card/product_card.dart';
 
 import '../../widgets/headers.dart';
 import '../../widgets/primary_button.dart';
@@ -14,10 +15,11 @@ class Home extends StatelessWidget {
       /*appBar: AppBar(
         title: Text('Home'),//have a look here https://api.flutter.dev/flutter/services/SystemUiOverlayStyle-class.html
       ),*/
-      body: Column(
+      body: SingleChildScrollView(
+          child: Column(
         children: [
-          Expanded(
-              flex: 7,
+          Container(
+              height: 536, // todo: size dynamically
               child: Stack(children: [
                 Container(
                   decoration: BoxDecoration(
@@ -27,7 +29,6 @@ class Home extends StatelessWidget {
                       alignment: Alignment.topCenter,
                     ),
                     color: Colors.blue,
-                    borderRadius: BorderRadius.circular(10),
                   ),
                 ),
                 Positioned(
@@ -58,8 +59,7 @@ class Home extends StatelessWidget {
                   ),
                 )
               ])),
-          Expanded(
-            flex: 3,
+          Container(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -85,11 +85,16 @@ class Home extends StatelessWidget {
                     style: TextStyle(color: Color(0xffABB4BD)),
                   ),
                 ),
+                Padding(
+                  padding: EdgeInsets.only(left: 16),
+                  child: ProductCard(image: 'product1.png'),
+                ),
+                SizedBox(height: 16),
               ],
             ),
           )
         ],
-      ),
+      )),
     );
   }
 }
