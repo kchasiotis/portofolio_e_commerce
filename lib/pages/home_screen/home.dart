@@ -4,6 +4,25 @@ import 'package:portofolio_e_commerce/pages/product_card/product_card.dart';
 import '../../models/Product.dart';
 import '../../widgets/headers.dart';
 
+
+class MenuItem extends StatelessWidget {
+  const MenuItem({super.key, required this.icon, required this.title});
+
+  final String icon;
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Image.asset('assets/tab_bar/$icon', width: 30, height: 30),
+        const SizedBox(height: 2),
+        Text(title, style: const TextStyle(fontSize: 11, color: Color(0xffABB4BD)))
+      ],
+    );
+  }
+}
+
 class Home extends StatelessWidget {
   const Home({super.key});
 
@@ -131,6 +150,35 @@ class Home extends StatelessWidget {
           )
         ],
       )),
+      bottomNavigationBar: SafeArea(
+          child: Container(
+              height: 60,
+              padding: const EdgeInsets.only(top: 8),
+              decoration:  BoxDecoration(
+                  color: Color(0xff1E1F28),
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(10),
+                      topRight: Radius.circular(10))),
+              child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SizedBox(width: 16),
+                    MenuItem(icon: 'home_inactive.png', title: 'Home'),
+                    SizedBox(width: 16),
+                    // shop_inactive
+                    MenuItem(icon: 'shop_inactive.png', title: 'Shop'),
+                    SizedBox(width: 16),
+                    // bag_inactive
+                    MenuItem(icon: 'bag_inactive.png', title: 'Bag'),
+                    SizedBox(width: 16),
+                    // favorites_inactive
+                    MenuItem(icon: 'favorites_inactive.png', title: 'Favorites'),
+                    SizedBox(width: 16),
+                    // profile_inactive
+                    MenuItem(icon: 'profile_inactive.png', title: 'Profile'),
+                    SizedBox(width: 16),
+                  ]))),
+      extendBody: true, // very important as noted
     );
   }
 }
