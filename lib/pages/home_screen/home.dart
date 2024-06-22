@@ -4,20 +4,37 @@ import 'package:portofolio_e_commerce/pages/product_card/product_card.dart';
 import '../../models/Product.dart';
 import '../../widgets/headers.dart';
 
-
 class MenuItem extends StatelessWidget {
-  const MenuItem({super.key, required this.icon, required this.title});
+  const MenuItem(
+      {super.key, required this.icon, required this.title, this.active});
 
   final String icon;
   final String title;
+  final bool? active;
 
   @override
   Widget build(BuildContext context) {
+    String assetName = icon;
+    assetName += active == true ? '_activated' : '_inactive';
+    assetName += '.png';
+
+    Widget TextWidget;
+    if (active == true) {
+      TextWidget = Text(title,
+            style: TextStyle(
+                fontSize: 11,
+                color: const Color(0xFFEF3651),
+                fontWeight: FontWeight.w600));
+    } else {
+      TextWidget = Text(title,
+            style: TextStyle(fontSize: 11, color: const Color(0xffABB4BD)));
+    }
+
     return Column(
       children: [
-        Image.asset('assets/tab_bar/$icon', width: 30, height: 30),
+        Image.asset('assets/tab_bar/$assetName', width: 30, height: 30),
         const SizedBox(height: 2),
-        Text(title, style: const TextStyle(fontSize: 11, color: Color(0xffABB4BD)))
+        TextWidget
       ],
     );
   }
@@ -145,7 +162,7 @@ class Home extends StatelessWidget {
                       ],
                     )),
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 96),
             ],
           )
         ],
@@ -154,7 +171,7 @@ class Home extends StatelessWidget {
           child: Container(
               height: 60,
               padding: const EdgeInsets.only(top: 8),
-              decoration:  BoxDecoration(
+              decoration: BoxDecoration(
                   color: Color(0xff1E1F28),
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(10),
@@ -163,19 +180,24 @@ class Home extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     SizedBox(width: 16),
-                    MenuItem(icon: 'home_inactive.png', title: 'Home'),
+                    // home
+                    MenuItem(
+                      icon: 'home',
+                      title: 'Home',
+                      active: true,
+                    ),
                     SizedBox(width: 16),
-                    // shop_inactive
-                    MenuItem(icon: 'shop_inactive.png', title: 'Shop'),
+                    // shop
+                    MenuItem(icon: 'shop', title: 'Shop'),
                     SizedBox(width: 16),
-                    // bag_inactive
-                    MenuItem(icon: 'bag_inactive.png', title: 'Bag'),
+                    // bag
+                    MenuItem(icon: 'bag', title: 'Bag'),
                     SizedBox(width: 16),
-                    // favorites_inactive
-                    MenuItem(icon: 'favorites_inactive.png', title: 'Favorites'),
+                    // favorites
+                    MenuItem(icon: 'favorites', title: 'Favorites'),
                     SizedBox(width: 16),
-                    // profile_inactive
-                    MenuItem(icon: 'profile_inactive.png', title: 'Profile'),
+                    // profile
+                    MenuItem(icon: 'profile', title: 'Profile'),
                     SizedBox(width: 16),
                   ]))),
       extendBody: true, // very important as noted
