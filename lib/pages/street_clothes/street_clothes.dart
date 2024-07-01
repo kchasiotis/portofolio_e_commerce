@@ -124,10 +124,10 @@ class StreetClothes extends StatelessWidget {
                   ),
                   const SizedBox(width: 16),
                   ProductCard(
-                    labelColor: const Color(0xffFF3365),
+                    labelColor: Colors.black,
                     product: Product(
                         image: 'product3.png',
-                        label: '-30%',
+                        label: 'NEW',
                         brandName: '&Berries',
                         description: 'T-Shirt',
                         price: 55,
