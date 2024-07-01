@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 
 import '../../models/Product.dart';
+import '../../theme/colors.dart';
 import '../../widgets/custom_bottom_navigation.dart';
 import '../../widgets/product_collection.dart';
 import '../product_card/product_card.dart';
-
-// todo refactor
-Color appWhite = const Color(0xffF6F6F6);
-Color appGray = const Color(0xffABB4BD);
-Color primaryRed = const Color(0xffFF3365);
 
 class StreetClothes extends StatelessWidget {
   const StreetClothes({super.key});

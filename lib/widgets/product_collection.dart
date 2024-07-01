@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../theme/colors.dart';
 import 'headers.dart';
 
 class ProductCollection extends StatelessWidget {

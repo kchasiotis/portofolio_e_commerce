@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
-Color appWhite = const Color(0xffF6F6F6);
-Color appGray = const Color(0xffABB4BD);
-Color primaryRed = const Color(0xffFF3365);
+import '../theme/colors.dart';
+
 
 class Headline extends StatelessWidget {
   const Headline({super.key, required this.title});
