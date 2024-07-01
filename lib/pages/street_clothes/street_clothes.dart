@@ -48,7 +48,7 @@ class StreetClothes extends StatelessWidget {
           ),
           Column(
             children: [
-              SizedBox(height: 37),
+              const SizedBox(height: 37),
               ProductCollection(
                 header: 'Sale',
                 underText: 'Super summer sale',
@@ -95,7 +95,7 @@ class StreetClothes extends StatelessWidget {
           ),
           Column(
             children: [
-              SizedBox(height: 40),
+              const SizedBox(height: 40),
               ProductCollection(
                 header: 'New',
                 underText: 'You\'ve never seen it before!',
@@ -138,7 +138,7 @@ class StreetClothes extends StatelessWidget {
                 ],
               )
             ],
-          )
+          ), const SizedBox(height: 96,)
         ],
       )),
 
