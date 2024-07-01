@@ -11,7 +11,8 @@ class ShowCaseHomeScreen extends StatelessWidget {
       appBar: const ScreenHeader(
         title: 'Home',
       ),
-      body: Padding(
+      body: SingleChildScrollView(
+          child: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
           children: [
@@ -91,9 +92,19 @@ class ShowCaseHomeScreen extends StatelessWidget {
                 },
               ),
             ),
+            const SizedBox(height: 16),
+            Container(
+              width: double.infinity,
+              child: PrimaryButton(
+                text: 'Street Clothes',
+                onPressed: () {
+                  Navigator.pushNamed(context, '/street_clothes');
+                },
+              ),
+            ),
           ],
         ),
-      ),
+      )),
     );
   }
 }
