@@ -102,6 +102,16 @@ class ShowCaseHomeScreen extends StatelessWidget {
                 },
               ),
             ),
+            const SizedBox(height: 16),
+            Container(
+              width: double.infinity,
+              child: PrimaryButton(
+                text: 'Collection Group',
+                onPressed: () {
+                  Navigator.pushNamed(context, '/collection_group');
+                },
+              ),
+            ),
           ],
         ),
       )),

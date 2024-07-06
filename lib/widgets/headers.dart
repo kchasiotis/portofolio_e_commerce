@@ -4,9 +4,10 @@ import '../theme/colors.dart';
 
 
 class Headline extends StatelessWidget {
-  const Headline({super.key, required this.title});
+  const Headline({super.key, required this.title, this.color});
 
   final String title;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,7 @@ class Headline extends StatelessWidget {
         style: TextStyle(
           fontSize: 34,
           fontWeight: FontWeight.bold,
-          color: Color(0xffF6F6F6),
+          color: color != null ? color : appWhite,
         ));
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portofolio_e_commerce/pages/collection_group/collection_group.dart';
 import 'package:portofolio_e_commerce/pages/forgot_password/forgot_password.dart';
 import 'package:portofolio_e_commerce/pages/home_screen/home.dart';
 import 'package:portofolio_e_commerce/pages/login/login.dart';
@@ -53,6 +54,7 @@ class MyApp extends StatelessWidget {
         '/search_by_photo': (context) => const SearchByPhoto(),
         '/home': (context) => const Home(),
         '/street_clothes': (context) => const StreetClothes(),
+        '/collection_group': (context) => const CollectionGroup(),
       },
     );
   }
