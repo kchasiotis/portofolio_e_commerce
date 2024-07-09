@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 
 import '../theme/colors.dart';
 
-
 class Headline extends StatelessWidget {
   const Headline({super.key, required this.title, this.color});
 
@@ -37,6 +36,7 @@ class LargeHeader extends StatelessWidget {
   }
 }
 
+// todo: check extending widget
 class SmallText extends StatelessWidget {
   const SmallText({super.key, required this.text, this.color});
 
@@ -52,3 +52,14 @@ class SmallText extends StatelessWidget {
         ));
   }
 }
+
+TextStyle smallTextStyle = TextStyle(
+  fontSize: 11,
+  color: appWhite,
+);
+
+TextStyle headline2TextStyle = TextStyle(
+  fontSize: 24,
+  color: appWhite,
+  fontWeight: FontWeight.w400,
+);
