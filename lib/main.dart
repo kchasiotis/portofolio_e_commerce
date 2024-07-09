@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portofolio_e_commerce/pages/categories_main/categories_main.dart';
 import 'package:portofolio_e_commerce/pages/collection_group/collection_group.dart';
 import 'package:portofolio_e_commerce/pages/forgot_password/forgot_password.dart';
 import 'package:portofolio_e_commerce/pages/home_screen/home.dart';
@@ -6,6 +7,7 @@ import 'package:portofolio_e_commerce/pages/login/login.dart';
 import 'package:portofolio_e_commerce/pages/sign_up/sign_up.dart';
 import 'package:portofolio_e_commerce/pages/street_clothes/street_clothes.dart';
 import 'package:portofolio_e_commerce/pages/visual_search/visual_search.dart';
+import 'package:portofolio_e_commerce/theme/colors.dart';
 
 import 'pages/home_screen/showcase_home_screen.dart';
 import 'pages/search_by_photo/search_by_photo.dart';
@@ -40,7 +42,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
-        scaffoldBackgroundColor: const Color(0xFF1E1F28),
+        scaffoldBackgroundColor: backgroundColor,
       ),
       // home: const SignUp(),
       // home: const Login(),
@@ -55,6 +57,7 @@ class MyApp extends StatelessWidget {
         '/home': (context) => const Home(),
         '/street_clothes': (context) => const StreetClothes(),
         '/collection_group': (context) => const CollectionGroup(),
+        '/categories_main': (context) => const CategoriesMain(),
       },
     );
   }

@@ -112,6 +112,16 @@ class ShowCaseHomeScreen extends StatelessWidget {
                 },
               ),
             ),
+            const SizedBox(height: 16),
+            Container(
+              width: double.infinity,
+              child: PrimaryButton(
+                text: 'Categories Main',
+                onPressed: () {
+                  Navigator.pushNamed(context, '/categories_main');
+                },
+              ),
+            ),
           ],
         ),
       )),
